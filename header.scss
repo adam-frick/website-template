@@ -1,0 +1,36 @@
+@import 'var';
+
+.header {
+  #nav { 
+    text-align: left;
+    background-color: $ia-background-color;
+    height: auto;
+
+    border-style: solid;
+    border-width: 0px 0px $border-width 0px;
+    border-color: $border-color;
+
+    ul li {
+      list-style-type: none;
+      display: inline;
+
+      a {
+        color: $font-color;
+        border-color: $ia-background-color;
+        border-width: $border-width;
+
+      }
+      
+      a:link, a:visited {
+        padding: $border-width;
+        text-decoration: none;
+      }
+
+      a:hover, a:active {
+        padding: 0px;
+        border-style: solid;
+        border-color: $border-color;
+      }
+    } 
+  }
+} 

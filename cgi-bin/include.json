@@ -1,0 +1,19 @@
+{
+    "source":{
+        "css": [
+            "index",
+            "header",
+            "footer"
+        ],
+
+        "html": [
+            "header",
+            "footer"
+        ]
+    },
+
+    "css":{
+        "prefix":"<link rel=\"stylesheet\" href=\"",
+        "suffix":".css\" type=\"text/css\">"
+    }
+}

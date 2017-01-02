@@ -1,0 +1,18 @@
+@import 'var';
+
+.footer {
+  position: fixed;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+
+  #content { 
+    text-align: left;
+    background-color: $ia-background-color;
+
+    border-style: solid;
+    border-width: $border-width 0px $border-width 0px;
+    border-color: $border-color;
+
+  }
+} 
