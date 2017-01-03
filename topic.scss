@@ -1,0 +1,23 @@
+@import 'var';
+
+.topic {
+  position: fixed;
+  padding: 20px;
+
+  left: 0px;
+  right: 0px;
+  top: 20px;
+  bottom: 20px;
+
+  #content { 
+    text-align: left;
+    background-color: $ia-background-color;
+
+    border-style: solid;
+    border-width: $border-width;
+    border-color: $border-color;
+
+    height: 100%;
+    margin: -1px;
+  }
+} 

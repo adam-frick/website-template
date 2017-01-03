@@ -3,11 +3,13 @@
         "css": [
             "index",
             "header",
+            "topic",
             "footer"
         ],
 
         "html": [
             "header",
+            "topic",
             "footer"
         ]
     },
