@@ -1,23 +1,52 @@
 @import 'var';
 
 .topic {
-  position: fixed;
-  padding: 20px;
+  padding: $topic-margin;
+  min-height: 100%;
 
   left: 0px;
-  right: 0px;
-  top: 20px;
-  bottom: 20px;
+  top: $topic-margin;
+  bottom: $topic-margin;
 
-  #content { 
-    text-align: left;
-    background-color: $ia-background-color;
+  #title:before {
+    display: inline-block;
+    content: "——";
+  }
+
+  #title {
+
+    h3 {
+      font-weight: normal;
+      display: inline-block;
+    }
+
+    #separator {
+      border-style: solid;
+      border-width: 5px 0px 0px 0px;
+      border-color: $style-color;
+    }
 
     border-style: solid;
-    border-width: $border-width;
+    border-width: $border-width $border-width 0px $border-width;
+    border-color: #000000;
+    color: $topic-title-text-color;
+    background-color: $topic-title-color;
+    
+    margin: -1px;
+  }
+
+  
+
+  #content { 
+    padding: $topic-padding;
+    text-align: left;
+    background-color: $ia-background-color;
+    right: 0px;
+
+    border-style: solid;
+    border-width: 0px $border-width $border-width $border-width;
     border-color: $border-color;
 
-    height: 100%;
     margin: -1px;
   }
 } 
