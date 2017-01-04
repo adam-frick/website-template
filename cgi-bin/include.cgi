@@ -7,12 +7,12 @@ use Path::Class;
 use Switch;
 print CGI::header;
 
-my $dir = dir("./");
-my $src_dir = dir("../");
+my $dir = CGI::param("dir") or die "No directory specified\n";
+my $src_dir = dir("../$dir");
 my $html_ext = ".html";
 my $filename = "include.json";
 
-my $file = $dir->file($filename);
+my $file = $src_dir->file($filename);
 my $content = $file->slurp();
 my $decode = decode_json($content);
 
@@ -28,7 +28,7 @@ switch (CGI::param("type")) { # cgi QUERY_STRING type value
         my $css_head = $decode->{"css"}{"prefix"};
         my $css_tail = $decode->{"css"}{"suffix"};
         for (@{$decode->{"source"}{"css"}}) {
-            print $css_head . $_ . $css_tail;
+            print $css_head . $src_dir . "/" . $_ . $css_tail;
         }
     }
 
