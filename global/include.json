@@ -1,21 +1,14 @@
 {
-    "source":{
-        "css": [
-            "global",
-            "header",
-            "topic",
-            "footer"
-        ],
+    "css": [
+        {"name":"style",      "scope":"global"},
+        {"name":"header",     "scope":"global"},
+        {"name":"topic",      "scope":"global"},
+        {"name":"footer",     "scope":"global"}
+    ],
 
-        "html": [
-            "header",
-            "topic",
-            "footer"
-        ]
-    },
-
-    "css":{
-        "prefix":"<link rel=\"stylesheet\" href=\"",
-        "suffix":".css\" type=\"text/css\">"
-    }
+    "html": [
+        {"name":"header",     "scope":"global"},
+        {"name":"topic",      "scope":"local"},
+        {"name":"footer",     "scope":"global"}
+    ]
 }
