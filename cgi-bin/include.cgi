@@ -29,15 +29,15 @@ my $json_decode = decode_json($json_content);
 switch (CGI::param("type")) { # cgi QUERY_STRING type value
     my $path_prefix;
     case "html" {
-        $path_prefix = "..";
         for (@{$json_decode->{"html"}}) { 
+            $path_prefix = "..";
             print get_file($_, $path_prefix, ".html")->slurp(); # print its contents
         } 
     }
 
     case "css" {
-        $path_prefix = "";
         for (@{$json_decode->{"css"}}) {
+            $path_prefix = "";
             print $css_prefix . get_file($_, $path_prefix, ".css") . $css_suffix;
         }
     }
