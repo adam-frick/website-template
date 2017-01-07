@@ -9,14 +9,15 @@ print CGI::header;
 
 my $css_prefix = "<link rel=\"stylesheet\" href=\"";
 my $css_suffix = "\" type=\"text/css\">";
+
 my $local_file_dir = dir("../" . 
-    substr(CGI::url(), 
-    length(CGI::url(base=>1) . "included:////."),
-    -length(CGI::url(relative=>1))
+    substr(CGI::request_uri, 
+    0,
+    -length("/main.shtml")
     )
 );
 
-my $global_file_dir = dir("../global");
+my $global_file_dir = dir("/global");
 
 my $json_filename = "include.json";
 my $html_ext = ".html";
@@ -26,15 +27,18 @@ my $json_content = $inc_file->slurp();
 my $json_decode = decode_json($json_content);
 
 switch (CGI::param("type")) { # cgi QUERY_STRING type value
+    my $path_prefix;
     case "html" {
+        $path_prefix = "..";
         for (@{$json_decode->{"html"}}) { 
-            print get_file($_, ".html")->slurp(); # print its contents
+            print get_file($_, $path_prefix, ".html")->slurp(); # print its contents
         } 
     }
 
     case "css" {
+        $path_prefix = "";
         for (@{$json_decode->{"css"}}) {
-            print $css_prefix . get_file($_, ".css") . $css_suffix;
+            print $css_prefix . get_file($_, $path_prefix, ".css") . $css_suffix;
         }
     }
 
@@ -53,12 +57,12 @@ sub get_file { # returns source file reference
         }
         case "local" {
             $get_file_dir = $local_file_dir;
+            $_[1] = "";
         }
         else {
             print "Error parsing source file scope\n";
         }
     }    
-    return dir($get_file_dir)->file($_->{"name"} . "$_[1]");
+    return dir($_[1] . $get_file_dir)->file($_->{"name"} . "$_[2]");
 }
-
 exit;
