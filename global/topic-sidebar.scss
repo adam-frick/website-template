@@ -1,5 +1,5 @@
 @import 'var';
-$sidebar-present: false !default;
+$sidebar-present: true !default;
 
 .topic {
   padding: $topic-margin;
@@ -8,7 +8,6 @@ $sidebar-present: false !default;
   left: 0px;
   top: $topic-margin;
   bottom: $topic-margin;
-
 
   @if $sidebar-present {
     margin-left: $topic-sidebar-margin;
@@ -28,7 +27,7 @@ $sidebar-present: false !default;
 
     #separator {
       border-style: solid;
-      border-width: $separator-width 0px 0px 0px;
+      border-width: 5px 0px 0px 0px;
       border-color: $style-color;
     }
 

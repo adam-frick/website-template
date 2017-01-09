@@ -16,3 +16,25 @@ body {
 html {
   height: 100%;
 }
+
+
+ul li {
+  list-style-type: none;
+
+  a {
+    border-color: $ia-background-color;
+    border-width: $border-width;
+
+  }
+  
+  a:link, a:visited {
+    padding: $border-width;
+    text-decoration: none;
+  }
+
+  a:hover, a:active {
+    padding: 0px;
+    border-style: solid;
+    border-color: $border-color;
+  }
+} 

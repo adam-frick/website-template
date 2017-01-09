@@ -1,0 +1,37 @@
+@import 'var';
+
+.sidebar {
+  padding: $topic-margin;
+  padding-right: $sidebar-padding;
+  position: absolute;
+  right: 0px;
+  left: 0px;
+
+  #style-padding {
+    background-color: $topic-title-color;
+    min-width: $sidebar-style-width;
+    position: absolute;
+    bottom: $topic-margin + $border-width;
+    top: $topic-margin + $border-width;
+    left: $topic-margin + $border-width;
+
+    border-style: solid;
+    border-width: 0px;
+    border-color: $style-color;
+    border-right-width: $separator-width;
+  }
+
+  #nav {
+    padding-left: $sidebar-style-width + $separator-width;
+    background-color: $ia-background-color;
+    border-style: solid;
+    border-width: $border-width;
+    border-color: $border-color;
+
+    a {
+      color: $font-color;
+    }
+
+  }
+
+} 
