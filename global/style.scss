@@ -34,9 +34,15 @@ ul li {
     text-decoration: none;
   }
 
-  a:hover, a:active {
+  a:hover {
     padding: 0px;
     border-style: solid;
     border-color: $border-color;
+    background-color: $background-color;
   }
+
+  a:active, a:focus {
+    color: $topic-title-color !important;
+  }
+
 } 
